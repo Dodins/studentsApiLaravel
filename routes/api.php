@@ -16,10 +16,15 @@ use App\Http\Controllers\Api\StudentController;
 */
 
 
+//READ
+Route::get('students', [StudentController::class, 'index']);
+Route::get('showstudents/{student}', [StudentController::class, 'show']);
 
-Route::get('allStudents', [StudentController::class, 'index']);
-Route::post('students', [StudentController::class, 'store']);
-Route::get('students/{student}', [StudentController::class, 'show']);
-Route::put('students/{student}', [StudentController::class, 'update']);
-Route::put('studentsUpdate/{student}', [StudentController::class, 'update']);
-Route::delete('studentsDelete/{student}', [StudentController::class, 'destroy']);
+//CREATE
+Route::post('addstudents', [StudentController::class, 'store']);
+
+//UPDATE
+Route::put('updatestudents/{student}', [StudentController::class, 'update']);
+
+//DELETE
+Route::delete('deletestudents/{student}', [StudentController::class, 'destroy']);
